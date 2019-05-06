@@ -19,7 +19,7 @@ public interface TeamService {
 
     Team addPlayer(Long teamId, Player player);
 
-    Team removePlayer(Long teamId, Player player);
+    Team removePlayer(Long teamId, Long playerId);
 
-    Team assignCaptain(Player player);
+    Team assignCaptain(Long teamId, Long captainId);
 }

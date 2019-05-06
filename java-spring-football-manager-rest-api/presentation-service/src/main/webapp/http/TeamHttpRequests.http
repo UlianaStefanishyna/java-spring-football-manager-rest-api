@@ -1,0 +1,18 @@
+POST http://localhost:8080/teams
+Content-Type: application/json
+
+{
+  "name": "TEAM1"
+}
+
+###
+
+GET http://localhost:8080/teams
+Content-Type: application/json
+
+###
+
+PUT http://localhost:8080/teams/1/assign-captain?captainId=1
+Content-Type: application/json
+
+###

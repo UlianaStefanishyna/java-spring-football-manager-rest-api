@@ -1,10 +1,11 @@
 package com.football.manager.model;
 
 import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
-import static javax.persistence.GenerationType.*;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Getter
 @Setter

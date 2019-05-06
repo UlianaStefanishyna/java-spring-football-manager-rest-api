@@ -3,11 +3,10 @@ package com.football.manager.model;
 import lombok.*;
 
 import javax.persistence.*;
-
 import java.util.HashSet;
 import java.util.Set;
 
-import static javax.persistence.GenerationType.*;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Getter
 @Setter
@@ -30,7 +29,7 @@ public class Team {
     private Player captain;
 
     @Setter(AccessLevel.PRIVATE)
-    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Set<Player> players = new HashSet<>();
 
     public void addPlayer(Player player) {

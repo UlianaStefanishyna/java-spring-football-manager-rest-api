@@ -7,6 +7,10 @@
     <artifactId>presentation-service</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <jackson.version>2.9.7</jackson.version>
+    </properties>
+
     <parent>
         <groupId>com.football.manager</groupId>
         <artifactId>java-spring-football-manager-rest-api</artifactId>
@@ -26,6 +30,30 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate5</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>

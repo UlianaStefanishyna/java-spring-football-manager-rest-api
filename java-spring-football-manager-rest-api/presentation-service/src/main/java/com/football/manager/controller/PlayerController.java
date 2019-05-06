@@ -1,6 +1,7 @@
 package com.football.manager.controller;
 
-import com.football.manager.model.BaseDto;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.football.manager.model.Player;
 import com.football.manager.service.PlayerService;
 import lombok.RequiredArgsConstructor;
@@ -9,10 +10,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/players")
+@Transactional
 @RequiredArgsConstructor
 public class PlayerController {
 
@@ -35,10 +38,9 @@ public class PlayerController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<BaseDto> deleteById(@PathVariable Long id) {
+    public ResponseEntity deleteById(@PathVariable Long id) {
         this.playerService.deleteById(id);
-        BaseDto response = BaseDto.builder().success(true).build();
-        return ResponseEntity.ok(response);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping

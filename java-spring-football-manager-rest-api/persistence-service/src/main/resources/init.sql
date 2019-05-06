@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS team
 (
   id         SERIAL8      NOT NULL,
   name       VARCHAR(255) NOT NULL,
-  captain_id BIGINT       NOT NULL,
+  captain_id BIGINT ,
 
   CONSTRAINT team_id_PK PRIMARY KEY (id),
   CONSTRAINT team_captain_id_UQ UNIQUE (captain_id)

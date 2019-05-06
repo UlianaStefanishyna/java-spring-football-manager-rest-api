@@ -42,7 +42,8 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player update(Player player) {
-        return null;
+        return ofNullable(this.playerRepository.save(player))
+                .orElseThrow(() -> new PersistenceException("Exception occurred while trying to update player data"));
     }
 
     @Override
